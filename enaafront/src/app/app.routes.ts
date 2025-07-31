@@ -1,7 +1,16 @@
 import { Component } from '@angular/core';
 import { Routes } from '@angular/router';
-import { ListBriefsComponent } from './pages/list-briefs/list-briefs.component';
+import {RegisterComponent} from './pages/register/register.component';
+import {LoginComponent} from './pages/login/login.component';
 
 export const routes: Routes = [
-     { path : 'briefs', component: ListBriefsComponent }
+  {
+    path : 'register',
+    component : RegisterComponent
+  },
+  {
+    path : 'login',
+    component : LoginComponent
+  }
+
 ];

@@ -1,0 +1,23 @@
+:host {
+  font-family: 'Fredoka One', cursive;
+  display: flex;
+  height: 100vh; /* Ensure full viewport height */
+  background-color: #44446E; /* Match the dark blue background from the image */
+  margin: 0; /* Remove any default margins */
+}
+:host {
+  font-family: 'Fredoka One', cursive;
+  display: flex; /* Flex container for sidebar and main */
+  height: 100vh; /* Full viewport height */
+  margin: 0; /* Remove default margins */
+  overflow: hidden; /* Prevent overflow issues */
+}
+
+app-navbar {
+  flex: 0 0 250px; /* Fixed width for sidebar, not shrinking or growing */
+}
+
+app-rendu {
+  flex: 1; /* Main content takes remaining width */
+  min-width: 0; /* Allow shrinking if needed */
+}
