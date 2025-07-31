@@ -1,15 +1,12 @@
-
-
-
 .main {
-
+  flex: 1; /* Takes remaining width */
   padding: 2rem;
   color: white;
   display: flex;
   flex-direction: column;
   overflow: auto;
-  height: 100%;
-
+  background-color: #44446E; /* Match the dark blue background */
+  height: 100vh;
 }
 
 .main h2 {
@@ -87,7 +84,6 @@
   background-color: #333355;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .main {
     padding: 1rem;
@@ -103,65 +99,56 @@
   }
 }
 
-.add-rendu-btn {
-  position: fixed;
-  right: 2.5rem;
-  bottom: 2.5rem;
-  background: #44446E;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 56px;
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-  cursor: pointer;
-  transition: background 0.2s;
-  z-index: 1000;
-}
-.add-rendu-btn:hover {
-  background: #a3a3a3;
-  color: #fff;
-}
 .modal-overlay {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.35);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2000;
 }
+
 .modal-form {
   background: #fff;
   border-radius: 12px;
   padding: 2rem 1.5rem 1.5rem 1.5rem;
   min-width: 320px;
   max-width: 95vw;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
   color: #44446E;
   position: relative;
   animation: modalIn 0.2s;
 }
+
 @keyframes modalIn {
-  from { transform: scale(0.95); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
+
 .modal-form h3 {
   margin-top: 0;
   margin-bottom: 1rem;
   font-size: 1.2rem;
   color: #44446E;
 }
+
 .form-group {
   margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
 }
+
 .modal-form input[type="url"],
 .modal-form textarea {
   border: 1px solid #ccc;
@@ -171,13 +158,7 @@
   font-size: 1rem;
   color: #44446E;
 }
-.modal-form input[type="file"] {
-  border: none;
-  font-size: 0.95rem;
-}
-.modal-form button[type="submit"] {
-  margin-left: 0.5rem;
-}
+
 .modal-form button {
   padding: 0.5rem 1.2rem;
   border-radius: 8px;
@@ -203,12 +184,14 @@
   border-radius: 5px;
   padding: 0.3rem 0.7rem;
 }
+
 .added-url-row a {
   color: #44446E;
   text-decoration: underline;
   word-break: break-all;
   font-size: 0.97rem;
 }
+
 .added-url-row .remove-added-url-btn {
   background: #e74c3c;
   color: #fff;
@@ -217,4 +200,13 @@
   padding: 0 0.5rem;
   cursor: pointer;
   font-size: 1rem;
+}
+
+.add-url-btn {
+  background: #ccc;
+  color: #44446E;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
 }

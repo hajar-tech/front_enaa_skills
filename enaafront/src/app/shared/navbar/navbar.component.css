@@ -1,6 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-
-/* SIDEBAR */
 .sidebar {
   background: #fff;
   width: 250px;
@@ -13,7 +16,7 @@
   border-bottom-right-radius: 50px;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
   position: relative;
-  height: 100%;
+  min-height: 100vh; /* Ensure sidebar takes full height */
 }
 
 .sidebar.collapsed {
@@ -82,7 +85,5 @@
   padding: 0.5rem 0.6rem;
   cursor: pointer;
   z-index: 999;
-  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
-
-

@@ -1,9 +1,7 @@
-<!-- Sidebar -->
-<aside class="sidebar" id="sidebar">
-  <button class="toggle-collapse" id="toggleBtn" title="Toggle sidebar">
-    <i class="fas fa-chevron-left" id="toggleIcon"></i>
+<aside class="sidebar" [class.collapsed]="isCollapsed" id="sidebar">
+  <button class="toggle-collapse" id="toggleBtn" title="Toggle sidebar" (click)="toggleSidebar()">
+    <i class="fas" [class.fa-chevron-left]="!isCollapsed" [class.fa-chevron-right]="isCollapsed"></i>
   </button>
-
   <div>
     <h2>Enna Skills</h2>
     <nav>

@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+  isCollapsed = false;
 
+  toggleSidebar() {
+    this.isCollapsed = !this.isCollapsed;
+  }
 }
