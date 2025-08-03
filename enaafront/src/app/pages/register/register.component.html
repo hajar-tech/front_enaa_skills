@@ -14,10 +14,10 @@
 
   <div class="p-8 lg:w-1/2 flex flex-col justify-center">
     <h2 class="text-3xl font-bold mb-6 text-gray-800">Register Now :</h2>
-    <form [formGroup]="registerForm">
+    <form [formGroup]="registerForm"  (ngSubmit)="onRegister()">
       <div class="mb-5">
-        <label for="fullName" class="block text-gray-700 text-lg font-semibold mb-2">full name :</label>
-        <input type="text" id="fullName" formControlName="fullName" placeholder="enter your full name :" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <label for="nom" class="block text-gray-700 text-lg font-semibold mb-2">full name :</label>
+        <input type="text" id="nom" formControlName="nom" placeholder="enter your full name :" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
       </div>
       <div class="mb-5">
         <label for="email" class="block text-gray-700 text-lg font-semibold mb-2">email :</label>
@@ -29,12 +29,12 @@
       </div>
 
         <div class="mb-6">
-            <label for="role" class="block text-gray-700 text-lg font-semibold mb-2">Role:</label>
-            <select id="role" formControlName="role"
+            <label for="typeUtilisateur" class="block text-gray-700 text-lg font-semibold mb-2">Role:</label>
+            <select id="typeUtilisateur" formControlName="typeUtilisateur"
                     class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <option value="" disabled selected>-- Select your role --</option>
-                <option value="USER">Formateur</option>
-                <option value="ADMIN">Apprenant</option>
+                <option value="" disabled >-- Select your role --</option>
+                <option value="formateur">Formateur</option>
+                <option value="apprenant">Apprenant</option>
             </select>
         </div>
 

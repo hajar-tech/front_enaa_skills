@@ -4,10 +4,10 @@ import {Observable} from 'rxjs';
 
 export interface Utilisateur {
   id? : number;
-  fullname : string;
+  nom : string;
   email : string;
   password : string;
-  role : string;
+  typeUtilisateur : string;
 }
 
 @Injectable({
@@ -19,7 +19,7 @@ export class AuthService {
   private apiUrl = 'http://localhost:8083/api/auth/register'
 
   register(user : Utilisateur): Observable<any>{
-   return  this.http.post<Utilisateur>(this.apiUrl , user)
+   return  this.http.post(this.apiUrl , user, {responseType:'text'})
 
  }
 }

@@ -19,24 +19,37 @@ export class RegisterComponent implements OnInit{
   }
   ngOnInit(): void {
     this.registerForm = this.fb.group({
-      fullname: ['', Validators.required],
+      nom: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
-      role: ['', Validators.required]
+      typeUtilisateur: ['', Validators.required]
     });
   }
 
 
 
   onRegister():void{
-    const user : Utilisateur = this.registerForm.value;
+    if(this.registerForm.valid){
+      console.log('Formulaire :', this.registerForm.value);
 
-    this.authService.register(user).subscribe({
-      next: res=> {console.log("user enregister avec succés");
-        this.root.navigate(['/login']);
-      },
-      error : err => console.log('Erreur inscription', err)
-    })
+      const user : Utilisateur = {
+        nom: this.registerForm.value.nom,
+        email: this.registerForm.value.email,
+        password: this.registerForm.value.password,
+        typeUtilisateur: this.registerForm.value.typeUtilisateur
+      };
+
+      this.authService.register(user).subscribe({
+        next: (res : string )=> {console.log("user enregister avec succés" , res);
+          this.root.navigate(['/login']);
+        },
+        error : err => {console.log('Erreur inscription', err);
+        alert("Une erreur s'est produite lors de l'inscription.");}
+      })
+    }else{
+      console.log("formulaire invalide !");
+    }
+
 
   }
 
