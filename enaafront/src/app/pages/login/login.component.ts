@@ -46,7 +46,7 @@ export class LoginComponent {
               break;
 
             case 'apprenant' :
-              this.root.navigate(['/register']);
+              this.root.navigate(['/rendu']);
               break;
 
             default:
