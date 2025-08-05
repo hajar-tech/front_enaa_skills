@@ -1,0 +1,53 @@
+<main class="main">
+  <h2>Briefs</h2>
+  <div class="card-container">
+    <h3>Brief promo 2025</h3>
+    <div class="cards">
+
+      <div *ngIf="isLoading" class="loading-message">
+        <p>Chargement des briefs...</p>
+      </div>
+
+      <div class="card" *ngFor="let brief of briefs">
+        <img src="https://placehold.co/300x120" [alt]="brief.title" class="card-image">
+        <div class="card-content">
+          <div class="card-title">{{ brief.title }}</div>
+          <div class="card-desc">{{ brief.description }}</div>
+          <div class="card-deadline">Date limite: {{ brief.dateLimit }}</div>
+        </div>
+      </div>
+
+      <div class="card add-card" (click)="openAddBriefModal()">
+        <div class="add-card-content">
+          <i class="fas fa-plus-circle"></i>
+          <div class="add-card-title">Ajouter un brief</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div class="modal-overlay" *ngIf="isAddBriefModalVisible">
+  <div class="modal-content">
+    <h3 class="modal-title">Ajouter un nouveau brief</h3>
+    <form (ngSubmit)="addNewBrief()">
+      <div class="form-group">
+        <label for="briefTitle">Titre</label>
+        <input type="text" id="briefTitle" placeholder="Titre du brief" required [(ngModel)]="newBriefTitle" name="briefTitle">
+      </div>
+      <div class="form-group">
+        <label for="briefDesc">Description</label>
+        <textarea id="briefDesc" rows="2" placeholder="Description du brief" required [(ngModel)]="newBriefDescription" name="briefDesc"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="briefDeadline">Date limite</label>
+        <!-- Champ de date limite, pré-rempli par la logique TS -->
+        <input type="date" id="briefDeadline" required [(ngModel)]="newBriefDateLimite" name="briefDeadline">
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-secondary" (click)="closeAddBriefModal()">Annuler</button>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -4,6 +4,7 @@ import {RenduComponent} from './pages/rendu/rendu.component';
 import {NavbarComponent} from './shared/navbar/navbar.component';
 
 import {RouterLink, RouterOutlet} from '@angular/router';
+import { BriefsComponent } from './pages/briefs/briefs.component';
 
 
 @Component({
@@ -13,7 +14,8 @@ import {RouterLink, RouterOutlet} from '@angular/router';
     RenduComponent,
     NavbarComponent,
     RouterOutlet,
-    RouterLink
+    RouterLink,
+    BriefsComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
